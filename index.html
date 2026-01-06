@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikas Pipe | Sanitary & Plumbing Materials</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles & Variables */
+        :root {
+            --primary-blue: #0a84d6;
+            --dark-blue: #0864a5;
+            --light-blue: #e6f4ff;
+            --accent-orange: #ff8c00;
+            --dark-gray: #333;
+            --medium-gray: #666;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--dark-blue);
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-orange);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-orange);
+        }
+
+        .btn-accent:hover {
+            background-color: #e67e00;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 60px;
+            margin-right: 15px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+            line-height: 1;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            margin-bottom: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        /* Hero Banner (From Screenshot) */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Product Banner Slider */
+        .product-banners {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+        
+        .banner-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .banner-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .banner-slide {
+            min-width: 100%;
+            position: relative;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+        
+        .banner-content {
+            background: linear-gradient(90deg, rgba(10, 132, 214, 0.85) 0%, rgba(10, 132, 214, 0.7) 100%);
+            color: var(--white);
+            padding: 40px;
+            max-width: 500px;
+            margin-left: 60px;
+            border-radius: 8px;
+        }
+        
+        .banner-content h2 {
+            color: var(--white);
+            text-align: left;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .banner-content h2:after {
+            left: 0;
+            transform: none;
+            background-color: var(--white);
+        }
+        
+        .banner-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        
+        .banner-btn {
+            background-color: var(--accent-orange);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: var(--transition);
+        }
+        
+        .banner-btn:hover {
+            background-color: #e67e00;
+            transform: translateY(-3px);
+        }
+        
+        .slider-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .slider-dot.active {
+            background-color: var(--white);
+            transform: scale(1.2);
+        }
+        
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        
+        .slider-nav-btn {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: var(--primary-blue);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        
+        .slider-nav-btn:hover {
+            background-color: var(--white);
+            transform: scale(1.1);
+        }
+
+        /* Products Section */
+        .products {
+            background-color: var(--light-gray);
+        }
+
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .category-btn {
+            padding: 10px 20px;
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f9f9f9;
+        }
+
+        .product-img img {
+            max-height: 100%;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-content {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark-blue);
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 10px;
+        }
+
+        .product-desc {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .product-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .product-btn:hover {
+            background-color: var(--dark-blue);
+        }
+
+        /* About Section */
+        .about-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-image img {
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .owner-info {
+            background-color: var(--light-blue);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .owner-info h4 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+
+        /* Emergency Banner */
+        .emergency-banner {
+            background-color: var(--accent-orange);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .emergency-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .emergency-text h3 {
+            margin-bottom: 5px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-item i {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            min-width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo h2 {
+            color: var(--white);
+            text-align: left;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo h2:after {
+            display: none;
+        }
+
+        .footer-links h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* ========== MOBILE RESPONSIVE STYLES ========== */
+        /* Large tablets and small desktops */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+        }
+
+        /* Tablets */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-banner {
+                padding: 150px 0 80px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .banner-slide {
+                height: 350px;
+            }
+            
+            .banner-content {
+                margin-left: 40px;
+                padding: 30px;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        /* Mobile Devices */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: var(--shadow);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hero-banner {
+                padding: 130px 0 70px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.2rem;
+                margin-bottom: 20px;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+                margin-bottom: 30px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .emergency-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .banner-slide {
+                height: 300px;
+            }
+            
+            .banner-content {
+                margin: 20px;
+                padding: 20px;
+                max-width: 100%;
+            }
+            
+            .banner-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .slider-nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media (max-width: 576px) {
+            section {
+                padding: 50px 0;
+            }
+            
+            .product-banners {
+                padding: 40px 0;
+            }
+            
+            .hero-banner {
+                padding: 120px 0 60px;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+            
+            .banner-slide {
+                height: 250px;
+            }
+            
+            .banner-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .banner-content p {
+                font-size: 1rem;
+            }
+            
+            .logo-img {
+                height: 50px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-categories {
+                gap: 10px;
+            }
+            
+            .category-btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-logo h2 {
+                text-align: center;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .contact-item i {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Very Small Mobile Devices */
+        @media (max-width: 400px) {
+            .hero-content h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero-buttons .btn {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .banner-slide {
+                height: 220px;
+            }
+            
+            .banner-content {
+                padding: 15px;
+            }
+            
+            .banner-content h2 {
+                font-size: 1.3rem;
+            }
+            
+            .header-container {
+                padding: 10px 15px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.8rem;
+            }
+            
+            .product-title {
+                font-size: 1.1rem;
+            }
+            
+            .product-price {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Landscape Mode */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero-banner {
+                padding: 100px 0 60px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* High Resolution Devices */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1300px;
+            }
+            
+            .hero-content h1 {
+                font-size: 4rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <!-- Logo Placeholder - Replace with actual logo -->
+                <div class="logo-img">
+                    <div style="width: 90px; height: 60px; background-color: #0a84d6; color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: bold; border-radius: 5px;">
+                        <img src="https://drive.google.com/file/d/1XxlV5flyuvULsZAjsJmqyRFcAXvRPxjt/view?usp=sharing" alt="Vikash Pipe Logo">
+                    </div>
+                </div>
+                <div class="logo-text">
+                    <h1>Vikas Pipe Sanitary & Plumbing Materials</h1>
+                    <p>Your Trusted Plumbing Solutions Provider</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:+918292144763" class="btn btn-accent">Call Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Banner (From Screenshot) -->
+    <section class="hero-banner" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your One-Stop Shop for Plumbing & Sanitary Materials</h1>
+                <p>Vikas Pipe offers a wide range of high-quality plumbing products, pipes, sanitaryware, and fixtures for residential and commercial needs. Serving Hariharganj and surrounding areas with trusted products since 2010.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn">Browse Products</a>
+                    <a href="tel:+918292144763" class="btn btn-accent">Call: +91 8292144763</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Banner Slider -->
+    <section class="product-banners" id="products">
+        <div class="container">
+            <h2>Featured Plumbing Products</h2>
+        </div>
+        
+        <div class="banner-container">
+            <div class="banner-slider" id="bannerSlider">
+                <!-- Banner 1 -->
+                <div class="banner-slide" style="background-image: url('https://bullpipes.in/wp-content/uploads/2022/12/bow-tie-copy-1-1.png');">
+                    <div class="banner-content">
+                        <h2>Trueflo Pipes & Fittings</h2>
+                        <p>High-quality PVC, CPVC, and UPVC pipes for all your plumbing needs. Durable, corrosion-resistant, and long-lasting solutions.</p>
+                        <a href="#contact" class="banner-btn">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <!-- Banner 2 -->
+                <div class="banner-slide" style="background-image: url('https://www.indiantradebird.com/itb-admin/members/9873/images/0_64e62fba.jpg">
+                    <div class="banner-content">
+                        <h2>Submersible Pumps</h2>
+                        <p>Reliable borewell submersible pumps for water supply. Available in various capacities for domestic and agricultural use.</p>
+                        <a href="#contact" class="banner-btn">View Range</a>
+                    </div>
+                </div>
+                
+                <!-- Banner 3 -->
+                <div class="banner-slide" style="background-image: url('https://images.unsplash.com/photo-1621967299229-c6e7085a7b4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                    <div class="banner-content">
+                        <h2>Sanitary Ware Collection</h2>
+                        <p>Modern toilets, basins, faucets, and bathroom accessories from top brands. Transform your bathroom with our premium collection.</p>
+                        <a href="#contact" class="banner-btn">Browse Collection</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-nav">
+                <button class="slider-nav-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-nav-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="slider-controls" id="sliderDots">
+                <!-- Dots will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <h2>Our Plumbing Products</h2>
+            
+            <div class="product-categories">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="pipes">Pipes & Fittings</button>
+                <button class="category-btn" data-category="sanitary">Sanitary Ware</button>
+                <button class="category-btn" data-category="pumps">Pumps & Motors</button>
+                <button class="category-btn" data-category="tools">Tools & Accessories</button>
+            </div>
+            
+            <div class="product-grid" id="productGrid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="pipes">
+                    <div class="product-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC_c_u0eOKfNarmghzOX-ufIecN1Lje7FGDA&s" alt="PVC Pipes">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">PVC Pipes (4 inch)</h3>
+                        <div class="product-price">₹ 450/meter</div>
+                        <p class="product-desc">High-quality PVC pipes for plumbing and drainage. Pressure resistant, durable, and long-lasting.</p>
+                        <button class="product-btn" onclick="inquireProduct('PVC Pipes (4 inch)')">Inquire Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card" data-category="pipes">
+                    <div class="product-img">
+                        <img src="data:image/jpeg;base64,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" alt="CPVC Pipes">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">CPVC Pipes (1 inch)</h3>
+                        <div class="product-price">₹ 180/meter</div>
+                        <p class="product-desc">Hot and cold water CPVC pipes with high temperature resistance. Ideal for residential plumbing.</p>
+                        <button class="product-btn" onclick="inquireProduct('CPVC Pipes (1 inch)')">Inquire Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card" data-category="pumps">
+                    <div class="product-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7lScad-S-FLsASjNxhRnBGPO06CY4ug4bCg&s" alt="Submersible Pump">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Submersible Pump 2HP</h3>
+                        <div class="product-price">₹ 12,500</div>
+                        <p class="product-desc">2HP borewell submersible pump with stainless steel body. Suitable for deep borewells up to 200 feet.</p>
+                        <button class="product-btn" onclick="inquireProduct('Submersible Pump 2HP')">Inquire Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card" data-category="sanitary">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Wall Mounted Basin">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Wall Mounted Basin</h3>
+                        <div class="product-price">₹ 3,200</div>
+                        <p class="product-desc">Ceramic wall mounted wash basin with modern design. Easy to clean and maintain.</p>
+                        <button class="product-btn" onclick="inquireProduct('Wall Mounted Basin')">Inquire Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card" data-category="sanitary">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="European WC">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">European WC Pan</h3>
+                        <div class="product-price">₹ 4,500</div>
+                        <p class="product-desc">Ceramic European style toilet with sleek design. Water-saving flush system.</p>
+                        <button class="product-btn" onclick="inquireProduct('European WC Pan')">Inquire Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card" data-category="pipes">
+                    <div class="product-img">
+                        <img src="data:image/jpeg;base64,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" alt="Pipe Fittings">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">PVC Pipe Fittings Kit</h3>
+                        <div class="product-price">₹ 1,200/kit</div>
+                        <p class="product-desc">Complete set of PVC pipe fittings including elbows, tees, couplers, and end caps.</p>
+                        <button class="product-btn" onclick="inquireProduct('PVC Pipe Fittings Kit')">Inquire Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card" data-category="tools">
+                    <div class="product-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6hC9hpdoVHQgmlFzaDlTWmY7Ku8ghEXIu4g&s" alt="Pipe Wrench">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Adjustable Pipe Wrench</h3>
+                        <div class="product-price">₹ 850</div>
+                        <p class="product-desc">Heavy-duty adjustable pipe wrench for plumbing work. Durable steel construction.</p>
+                        <button class="product-btn" onclick="inquireProduct('Adjustable Pipe Wrench')">Inquire Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card" data-category="sanitary">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mixer Tap">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Single Lever Mixer Tap</h3>
+                        <div class="product-price">₹ 1,800</div>
+                        <p class="product-desc">Chrome plated single lever mixer tap for kitchen/bathroom. Ceramic cartridge for smooth operation.</p>
+                        <button class="product-btn" onclick="inquireProduct('Single Lever Mixer Tap')">Inquire Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 9 -->
+                <div class="product-card" data-category="pumps">
+                    <div class="product-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG9U3iqUlnHTMH5dSu2qKxXqI8YwZwuLBmhQ&s" alt="Jet Pump">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Jet Pump 1HP</h3>
+                        <div class="product-price">₹ 8,500</div>
+                        <p class="product-desc">1HP self-priming jet pump for overhead tank filling. Automatic pressure switch included.</p>
+                        <button class="product-btn" onclick="inquireProduct('Jet Pump 1HP')">Inquire Now</button>
+                    </div>
+                </div>
+                
+                <!-- Product 10 -->
+                <div class="product-card" data-category="pipes">
+                    <div class="product-img">
+                        <img src="data:image/jpeg;base64,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" alt="Garden Hose Pipe">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Garden Hose Pipe (50m)</h3>
+                        <div class="product-price">₹ 1,500</div>
+                        <p class="product-desc">Flexible garden hose pipe with brass fittings. UV resistant and durable for outdoor use.</p>
+                        <button class="product-btn" onclick="inquireProduct('Garden Hose Pipe (50m)')">Inquire Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Our Store</h2>
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Vikas Pipe Store">
+                </div>
+                <div class="about-content">
+                    <h3>Vikas Pipe Sanitary & Plumbing Materials</h3>
+                    <p>Established in 2010, Vikas Pipe has been serving the Hariharganj community and surrounding areas with high-quality plumbing and sanitary materials. We are your trusted partner for all plumbing needs, from residential projects to commercial installations.</p>
+                    <p>Our store offers a wide range of products including pipes, fittings, sanitary ware, pumps, and plumbing tools. We pride ourselves on providing genuine products from trusted brands at competitive prices.</p>
+                    
+                    <div class="owner-info">
+                        <h4>Proprietor: Md Sarfraz Alam</h4>
+                        <p>With over 14 years of experience in the plumbing industry, Mr. Sarfraz Alam ensures that customers receive expert advice and quality products for their specific requirements.</p>
+                    </div>
+                    
+                    <a href="#contact" class="btn">Visit Our Store</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <section class="emergency-banner">
+        <div class="container emergency-content">
+            <div class="emergency-text">
+                <h3>Need Plumbing Materials Urgently?</h3>
+                <p>We provide quick delivery of plumbing materials across Hariharganj and nearby areas. Call us for immediate requirements.</p>
+            </div>
+            <div class="emergency-cta">
+                <a href="tel:+918292144763" class="btn">Call Now: +91 8292144763</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Our Store Location</h3>
+                            <p>Main Road Hariharganj, Palamu (Jharkhand)- 822131</p>
+                            <p><em>Near Hariharganj Police Station, Opposite SBI Bank</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h3>Contact Numbers</h3>
+                            <p><strong>Mobile:</strong> +91 8292144763</p>
+                            <p><strong>WhatsApp:</strong> +91 8292144763</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email Address</h3>
+                            <p>safrajalam1139@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p><strong>Mon-Sat:</strong> 9:00 AM - 8:00 PM</p>
+                            <p><strong>Sunday:</strong> 10:00 AM - 6:00 PM</p>
+                            <p><em>Open on all public holidays</em></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-truck"></i>
+                        <div>
+                            <h3>Delivery Service</h3>
+                            <p>Free delivery within Hariharganj for orders above ₹ 2,000. Delivery charges apply for nearby areas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="productInquiryForm">
+                        <h3>Product Inquiry</h3>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="tel" placeholder="Your Mobile Number" required>
+                        <input type="email" placeholder="Your Email (Optional)">
+                        <select required>
+                            <option value="">Select Product Category</option>
+                            <option value="pipes">Pipes & Fittings</option>
+                            <option value="sanitary">Sanitary Ware</option>
+                            <option value="pumps">Pumps & Motors</option>
+                            <option value="tools">Tools & Accessories</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea placeholder="Product details or specific requirements" required></textarea>
+                        <button type="submit" class="btn">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <h2>Vikas Pipe</h2>
+                    </div>
+                    <p>Your trusted supplier of plumbing and sanitary materials in Hariharganj. Quality products, competitive prices, and reliable service since 2010.</p>
+                    <p><strong>Proprietor:</strong> Md Sarfraz Alam</p>
+                    <p><strong>GST No:</strong> 20ABCDE1234F1Z5</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact">Product Inquiry</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Product Categories</h3>
+                    <ul>
+                        <li><a href="#products">PVC/CPVC Pipes</a></li>
+                        <li><a href="#products">Submersible Pumps</a></li>
+                        <li><a href="#products">Sanitary Ware</a></li>
+                        <li><a href="#products">Pipe Fittings</a></li>
+                        <li><a href="#products">Plumbing Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Main Road, Hariharganj, Palamu-822131</p>
+                    <p><i class="fas fa-phone"></i> +91 8292144763</p>
+                    <p><i class="fas fa-envelope"></i> safrajalam1139@gmail.com</p>
+                    <div class="social-icons" style="margin-top: 15px;">
+                        <a href="https://wa.me/918292144763" style="margin-right: 10px; color: #25D366;"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        <a href="tel:+918292144763" style="margin-right: 10px; color: white;"><i class="fas fa-phone fa-2x"></i></a>
+                        <a href="mailto:safrajalam1139@gmail.com" style="color: white;"><i class="fas fa-envelope fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Vikas Pipe Sanitary & Plumbing Materials. All rights reserved. | Proprietor: Md Sarfraz Alam</p>
+                <p style="margin-top: 10px;">Main Road Hariharganj, Palamu (Jharkhand)- 822131 | Mobile: +91 8292144763</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/918292144763" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Form Submission
+        document.getElementById('productInquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will contact you shortly.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Product Banner Slider
+        const slider = document.getElementById('bannerSlider');
+        const slides = document.querySelectorAll('.banner-slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const sliderDots = document.getElementById('sliderDots');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        // Create dots for each slide
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('slider-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            sliderDots.appendChild(dot);
+        }
+        
+        const dots = document.querySelectorAll('.slider-dot');
+        
+        // Function to update slider position
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update active dot
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        // Next slide function
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+        
+        // Previous slide function
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+        
+        // Go to specific slide
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+        
+        // Event listeners for buttons
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Auto slide every 5 seconds
+        let slideInterval = setInterval(nextSlide, 5000);
+        
+        // Pause auto-slide on hover
+        const bannerContainer = document.querySelector('.banner-container');
+        bannerContainer.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        
+        bannerContainer.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // Touch swipe support for mobile
+        let startX = 0;
+        let endX = 0;
+        
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        slider.addEventListener('touchmove', (e) => {
+            endX = e.touches[0].clientX;
+        });
+        
+        slider.addEventListener('touchend', () => {
+            if (startX - endX > 50) {
+                // Swipe left - next slide
+                nextSlide();
+            } else if (endX - startX > 50) {
+                // Swipe right - previous slide
+                prevSlide();
+            }
+        });
+
+        // Product Category Filter
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const category = btn.getAttribute('data-category');
+                
+                // Show/hide products based on category
+                productCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Product Inquiry Function
+        function inquireProduct(productName) {
+            const message = `I'm interested in ${productName}. Please provide more details.`;
+            document.querySelector('#productInquiryForm textarea').value = message;
+            document.querySelector('#productInquiryForm').scrollIntoView({behavior: 'smooth'});
+        }
+
+        // Fix for mobile viewport height
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        
+        // Set viewport height on load and resize
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+        window.addEventListener('orientationchange', setViewportHeight);
+    </script>
+</body>
+</html>
